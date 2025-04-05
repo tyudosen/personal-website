@@ -1,0 +1,22 @@
+name: cd
+
+on:
+  workflow_run:
+    workflows: ['ci']
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pull Docker image
+        run: docker pull ${{ secrets.DOCKER_USERNAME }}/personal-website:${{ env.TAG }}
+
+      - name: Run Docker container
+        run: docker run -d -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/personal-website:${{ env.TAG }}
+  
+  

@@ -1,4 +1,4 @@
-name: AWS EC2 CD
+name: ci
 
 on:
   workflow_run:
