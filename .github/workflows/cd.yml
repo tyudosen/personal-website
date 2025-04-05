@@ -27,8 +27,8 @@ jobs:
             });
             const tag = run.data.head_branch;
             core.setOutput('tag', tag);
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Debug tag
         run: echo "Docker tag: ${{ steps.get-tag.outputs.tag }}"
