@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="flex-1">
-      <p className="pt-8 w-[50%] font-base">
+      <p className="pt-8 w-[50%] font-base color-base-text">
         I am a{" "}
         <strong>
           <a
@@ -20,8 +20,7 @@ export default function Home() {
             software engineer
           </a>
         </strong>{" "}
-        with a passion for building{" "}
-        <strong>beautiful, scalable and efficient</strong> systems.
+        with a passion for building beautiful, scalable and efficient systems.
       </p>
     </main>
   );
