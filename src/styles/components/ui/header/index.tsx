@@ -2,6 +2,6 @@
 
 export default function Header() {
   return <header>
-    <h1 className="text-[7vw] font-bold">Hi, I&apos;m <strong>Toyoabasi Udosen</strong></h1>
+    <h1 className="text-[7vw] font-header">Hi, I&apos;m <strong className="italic">Toyoabasi Udosen</strong></h1>
   </header>;
 }
