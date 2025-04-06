@@ -20,7 +20,7 @@ export default function Home() {
             software engineer
           </a>
         </strong>{" "}
-        with a passion for bulding{" "}
+        with a passion for building{" "}
         <strong>beautiful, scalable and efficient</strong> systems.
       </p>
     </main>
