@@ -5,7 +5,7 @@ import { Button } from "../button";
 
 export default function Footer() {
   const handleClick = () => {
-    trackEvent('contact-me-link-click');
+    trackEvent('contact me link clicked');
   };
 
   return <footer className="flex gap-4">
