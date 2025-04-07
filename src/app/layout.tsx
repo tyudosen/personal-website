@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { FathomAnalytics } from "./fathom";
+import FathomAnalytics from "./fathom";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
