@@ -1,11 +1,12 @@
 'use client'
 import { load, trackPageview } from 'fathom-client'
-import { useEffect } from 'react'
+import { Suspense, useEffect } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 
-export default function Fathom() {
+function TrackPageView() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
+  
   useEffect(() => {
     load(process.env.NEXT_PUBLIC_FATHOM_ID as string, {
       includedDomains: [process.env.DOMAIN_ONE as string, process.env.DOMAIN_TWO as string],
@@ -26,4 +27,12 @@ export default function Fathom() {
   }, [pathname, searchParams])
 
   return null
+}
+
+export default function Fathom() {
+  return (
+    <Suspense fallback={null}>
+      <TrackPageView />
+    </Suspense>
+  );
 }
