@@ -12,8 +12,8 @@ function TrackPageView() {
   
   useEffect(() => {
     console.log('inside -->', process.env.NEXT_PUBLIC_FATHOM_ID)
-    load(process.env.NEXT_PUBLIC_FATHOM_ID as string, {
-      includedDomains: [process.env.DOMAIN_ONE as string, process.env.DOMAIN_TWO as string],
+    load('EXWHZXKK', {
+      includedDomains: ['in-ataraxia.com', 'www.in-ataraxia.com'],
       spa: 'auto',
     })
 
