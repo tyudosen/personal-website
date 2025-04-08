@@ -3,6 +3,8 @@ import { load, trackPageview } from 'fathom-client'
 import { Suspense, useEffect } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 
+console.log(process.env.NEXT_PUBLIC_FATHOM_ID)
+
 function TrackPageView() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
