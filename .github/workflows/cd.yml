@@ -37,4 +37,4 @@ jobs:
         run: docker ps --filter "publish=3000" --format "{{.ID}}" | xargs -r docker rm -f
 
       - name: Run Docker container
-        run: docker run -d -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/personal-website:${{ steps.get-tag.outputs.tag }}
+        run: docker run --env-file ./env/.env.personal-website -d -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/personal-website:${{ steps.get-tag.outputs.tag }}
