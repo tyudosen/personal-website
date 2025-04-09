@@ -20,8 +20,8 @@
       }
     ],
     "paths": {
-      "@/components/*": ["styles/components/ui/*"],
-      "@/utils/*": ["utils/*", "styles/lib/*"],
+      "@/components/*": ["components/ui/*", "components/*"],
+      "@/utils/*": ["lib/*"],
       "@/types/*": ["types/*"],
       "@/hooks/*": ["hooks/*"],
       "@/context/*": ["context/*"],

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import FathomAnalytics from "./fathom";
+import { PostHogProvider } from "./providers/posthog";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -35,8 +36,9 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${playfairDisplay.variable} ${inter.variable} antialiased`}
       >
-        <FathomAnalytics />
-        {children}
+        <PostHogProvider>
+          {children}
+        </PostHogProvider>
       </body>
     </html>
   );
