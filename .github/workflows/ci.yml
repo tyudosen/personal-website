@@ -23,7 +23,7 @@ jobs:
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
       - name: Build the Docker image
-        run: cd ../../../../../ && ls -ltr -a 
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/personal-website:${{ env.TAG }} .
 
       - name: Push the Docker image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/personal-website:${{ env.TAG }}
