@@ -18,9 +18,12 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-ENV NEXT_TELEMETRY_DISABLED=1
+# Mount secret env file (BuildKit-only)
+RUN --mount=type=secret,id=envfile \
+    export $(cat /run/secrets/envfile | xargs) && \
+    npm run build
 
-RUN npm run build
+ENV NEXT_TELEMETRY_DISABLED=1
 
 # Production image
 FROM base AS runner
