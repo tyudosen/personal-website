@@ -26,6 +26,9 @@ jobs:
         env:
           NEXT_PUBLIC_POSTHOG_HOST: ${{ secrets.NEXT_PUBLIC_POSTHOG_HOST }}
           NEXT_PUBLIC_POSTHOG_KEY: ${{ secrets.NEXT_PUBLIC_POSTHOG_KEY }}
+          NEXT_PUBLIC_TEST: ${{ secrets.NEXT_PUBLIC_TEST }}
+          TEST: ${{ secrets.TEST }}
+
         run: |
           docker build \
           --build-arg NEXT_PUBLIC_POSTHOG_HOST=$NEXT_PUBLIC_POSTHOG_HOST \
