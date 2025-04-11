@@ -1,11 +1,13 @@
 "use client";
 
-import { trackEvent } from "fathom-client";
+import { usePostHog } from "posthog-js/react";
 import { Button } from "../button";
 
 export default function Footer() {
+  const posthog = usePostHog();
+  
   const handleClick = () => {
-    trackEvent('contact me link clicked');
+    posthog.capture('contact-me-clicked');
   };
 
   return <footer className="flex gap-4">
