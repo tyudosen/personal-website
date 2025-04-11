@@ -23,6 +23,8 @@ jobs:
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
       - name: Build the Docker image
+        env:
+          PASSED_ACTION_ENV: hi-mom
         run: printenv
 
       - name: Push the Docker image
