@@ -33,6 +33,8 @@ jobs:
           docker build \
           --build-arg NEXT_PUBLIC_POSTHOG_HOST=$NEXT_PUBLIC_POSTHOG_HOST \
           --build-arg NEXT_PUBLIC_POSTHOG_KEY=$NEXT_PUBLIC_POSTHOG_KEY \
+          --build-arg NEXT_PUBLIC_TEST=$NEXT_PUBLIC_TEST \
+          --build-arg TEST=$TEST \
           -t ${{ secrets.DOCKER_USERNAME }}/personal-website:${{ env.TAG }} .
 
       - name: Push the Docker image
