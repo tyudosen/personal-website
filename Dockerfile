@@ -18,12 +18,15 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Mount secret env file (BuildKit-only)
-RUN --mount=type=secret,id=envfile \
-    export $(cat /run/secrets/envfile | xargs) && \
-    npm run build
-
 ENV NEXT_TELEMETRY_DISABLED=1
+
+ARG NEXT_PUBLIC_POSTHOG_HOST
+ARG NEXT_PUBLIC_POSTHOG_KEY
+
+ENV NEXT_PUBLIC_POSTHOG_HOST=$NEXT_PUBLIC_POSTHOG_HOST
+ENV NEXT_PUBLIC_POSTHOG_KEY=$NEXT_PUBLIC_POSTHOG_KEY
+
+RUN npm run build
 
 # Production image
 FROM base AS runner
