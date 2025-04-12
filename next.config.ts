@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
       {
         source: '/',
         destination: '/home',
+        permanent: false,
       },
       // // Wildcard path matching
       // {
